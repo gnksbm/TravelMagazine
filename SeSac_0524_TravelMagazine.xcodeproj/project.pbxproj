@@ -17,6 +17,7 @@
 		BE2848ED2C00B85C00D5E817 /* Magazine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2848EC2C00B85C00D5E817 /* Magazine.swift */; };
 		BE2848F02C00B96700D5E817 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BE2848EF2C00B96700D5E817 /* Kingfisher */; };
 		BE2848F22C00C08400D5E817 /* MagazineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2848F12C00C08400D5E817 /* MagazineTableViewCell.swift */; };
+		BE2849182C00C26400D5E817 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2849172C00C26400D5E817 /* Restaurant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		BE2848EA2C00B81400D5E817 /* MagazineInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagazineInfo.swift; sourceTree = "<group>"; };
 		BE2848EC2C00B85C00D5E817 /* Magazine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magazine.swift; sourceTree = "<group>"; };
 		BE2848F12C00C08400D5E817 /* MagazineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineTableViewCell.swift; sourceTree = "<group>"; };
+		BE2849172C00C26400D5E817 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				BE2848D82C00B7D800D5E817 /* SceneDelegate.swift */,
 				BE2848DA2C00B7D800D5E817 /* ViewController.swift */,
 				BE2848EA2C00B81400D5E817 /* MagazineInfo.swift */,
+				BE2849172C00C26400D5E817 /* Restaurant.swift */,
 				BE2848EC2C00B85C00D5E817 /* Magazine.swift */,
 				BE2848F12C00C08400D5E817 /* MagazineTableViewCell.swift */,
 				BE2848DC2C00B7D800D5E817 /* Main.storyboard */,
@@ -158,6 +161,7 @@
 				BE2848DB2C00B7D800D5E817 /* ViewController.swift in Sources */,
 				BE2848ED2C00B85C00D5E817 /* Magazine.swift in Sources */,
 				BE2848EB2C00B81400D5E817 /* MagazineInfo.swift in Sources */,
+				BE2849182C00C26400D5E817 /* Restaurant.swift in Sources */,
 				BE2848F22C00C08400D5E817 /* MagazineTableViewCell.swift in Sources */,
 				BE2848D72C00B7D800D5E817 /* AppDelegate.swift in Sources */,
 				BE2848D92C00B7D800D5E817 /* SceneDelegate.swift in Sources */,
