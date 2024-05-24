@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ghT-qT-jUn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uK6-Ss-4qL">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Magazine View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="e1P-jK-DF3">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MagazineViewController" customModule="SeSac_0524_TravelMagazine" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="TBN-0t-5mw" customClass="MagazineViewController" customModule="SeSac_0524_TravelMagazine" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="a5g-m2-h2i">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <connections>
+                            <outlet property="dataSource" destination="TBN-0t-5mw" id="pCD-YE-SV5"/>
+                            <outlet property="delegate" destination="TBN-0t-5mw" id="g43-LW-q0H"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="4Zn-z6-b5M"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T6H-S9-rrJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="4"/>
+            <point key="canvasLocation" x="1985" y="4"/>
         </scene>
         <!--Restaurant List View Controller-->
         <scene sceneID="mRh-jK-mIT">
@@ -46,13 +49,72 @@
                             <outlet property="delegate" destination="ghT-qT-jUn" id="vfJ-LV-8Ml"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="UxK-0y-iTv"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfb-ir-4ZF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="14"/>
+            <point key="canvasLocation" x="1987" y="745"/>
+        </scene>
+        <!--매거진-->
+        <scene sceneID="XYB-Co-60p">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lGy-AZ-o8F" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="매거진" image="magazine" catalog="system" id="CYt-H7-hhP"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a47-y6-NKg">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TBN-0t-5mw" kind="relationship" relationship="rootViewController" id="JAG-AV-p7W"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jo5-fl-LUZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1061.8320610687022" y="3.5211267605633805"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Oh6-JE-tcr">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="uK6-Ss-4qL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="M8k-Ub-fqL">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="lGy-AZ-o8F" kind="relationship" relationship="viewControllers" id="Wcv-Sa-WPU"/>
+                        <segue destination="dCe-dP-qCd" kind="relationship" relationship="viewControllers" id="SxE-26-0be"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1bS-BI-moo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
+        </scene>
+        <!--음식점-->
+        <scene sceneID="Pou-Zu-ueM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dCe-dP-qCd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="음식점" image="fork.knife" catalog="system" id="Lgb-fA-uVu"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aHi-GP-NTN">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ghT-qT-jUn" kind="relationship" relationship="rootViewController" id="Jev-hi-mpy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NQV-2N-7u1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1060" y="745"/>
         </scene>
     </scenes>
     <resources>
+        <image name="fork.knife" catalog="system" width="94" height="128"/>
+        <image name="magazine" catalog="system" width="110" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -34,7 +34,9 @@ extension RestaurantListViewController {
             RestaurantTableViewCell.self,
             for: indexPath
         )
-        cell.configureCell(restaurant: restaurantList.restaurantArray[indexPath.row])
+        cell.configureCell(
+            restaurant: restaurantList.restaurantArray[indexPath.row]
+        )
         return cell
     }
 }

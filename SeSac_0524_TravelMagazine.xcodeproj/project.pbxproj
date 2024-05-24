@@ -102,8 +102,8 @@
 		BE28491F2C00EF1900D5E817 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BE2849172C00C26400D5E817 /* Restaurant.swift */,
 				BE2848EC2C00B85C00D5E817 /* Magazine.swift */,
+				BE2849172C00C26400D5E817 /* Restaurant.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
