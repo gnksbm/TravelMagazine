@@ -69,22 +69,53 @@ final class MagazineTableViewCell: UITableViewCell {
         }
         
         NSLayoutConstraint.activate([
-            largeImageView.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor, constant: 8),
-            largeImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            largeImageView.widthAnchor.constraint(equalTo: contentView.layoutMarginsGuide.widthAnchor),
-            largeImageView.heightAnchor.constraint(equalTo: largeImageView.widthAnchor),
+            largeImageView.topAnchor.constraint(
+                equalTo: contentView.layoutMarginsGuide.topAnchor,
+                constant: 8
+            ),
+            largeImageView.centerXAnchor.constraint(
+                equalTo: contentView.centerXAnchor
+            ),
+            largeImageView.widthAnchor.constraint(
+                equalTo: contentView.layoutMarginsGuide.widthAnchor
+            ),
+            largeImageView.heightAnchor.constraint(
+                equalTo: largeImageView.widthAnchor
+            ),
             
-            titleLabel.topAnchor.constraint(equalTo: largeImageView.bottomAnchor, constant: 16),
-            titleLabel.leadingAnchor.constraint(equalTo: largeImageView.leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: largeImageView.trailingAnchor),
+            titleLabel.topAnchor.constraint(
+                equalTo: largeImageView.bottomAnchor,
+                constant: 16
+            ),
+            titleLabel.leadingAnchor.constraint(
+                equalTo: largeImageView.leadingAnchor
+            ),
+            titleLabel.trailingAnchor.constraint(
+                equalTo: largeImageView.trailingAnchor
+            ),
             
-            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
-            subtitleLabel.leadingAnchor.constraint(equalTo: largeImageView.leadingAnchor),
-            subtitleLabel.trailingAnchor.constraint(equalTo: largeImageView.trailingAnchor),
+            subtitleLabel.topAnchor.constraint(
+                equalTo: titleLabel.bottomAnchor,
+                constant: 8
+            ),
+            subtitleLabel.leadingAnchor.constraint(
+                equalTo: largeImageView.leadingAnchor
+            ),
+            subtitleLabel.trailingAnchor.constraint(
+                equalTo: largeImageView.trailingAnchor
+            ),
             
-            dateLabel.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 8),
-            dateLabel.trailingAnchor.constraint(equalTo: largeImageView.trailingAnchor),
-            dateLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor, constant: -8)
+            dateLabel.topAnchor.constraint(
+                equalTo: subtitleLabel.bottomAnchor,
+                constant: 8
+            ),
+            dateLabel.trailingAnchor.constraint(
+                equalTo: largeImageView.trailingAnchor
+            ),
+            dateLabel.bottomAnchor.constraint(
+                equalTo: contentView.layoutMarginsGuide.bottomAnchor,
+                constant: -8
+            )
         ])
     }
 }

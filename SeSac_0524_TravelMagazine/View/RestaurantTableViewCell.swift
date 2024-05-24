@@ -164,8 +164,8 @@ final class RestaurantTableViewCell: UITableViewCell {
                 equalTo: addressLabel.bottomAnchor,
                 constant: 24
             ),
-            largeImageView.leadingAnchor.constraint(
-                equalTo: contentView.leadingAnchor
+            largeImageView.centerXAnchor.constraint(
+                equalTo: contentView.centerXAnchor
             ),
             largeImageView.widthAnchor.constraint(
                 equalTo: contentView.widthAnchor
