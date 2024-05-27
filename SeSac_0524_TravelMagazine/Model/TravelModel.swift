@@ -4,7 +4,7 @@
 //  Created by Den on 2024/05/11.
 //
 
-import Foundation
+import UIKit
 
 struct Travel {
     let title: String

@@ -71,6 +71,7 @@
                     <connections>
                         <segue destination="lGy-AZ-o8F" kind="relationship" relationship="viewControllers" id="Wcv-Sa-WPU"/>
                         <segue destination="dCe-dP-qCd" kind="relationship" relationship="viewControllers" id="SxE-26-0be"/>
+                        <segue destination="WnD-A6-GUS" kind="relationship" relationship="viewControllers" id="gG9-dx-DUA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bS-BI-moo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -137,6 +138,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3yd-1p-KtE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1984" y="744"/>
+        </scene>
+        <!--도시 상세 정보-->
+        <scene sceneID="AZb-DQ-sNe">
+            <objects>
+                <viewController id="Eay-QI-D2B" customClass="TravelViewController" customModule="SeSac_0524_TravelMagazine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PHA-Qg-jd7">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wMs-Me-Gc3">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="b8P-gs-Tv6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="b8P-gs-Tv6" firstAttribute="trailing" secondItem="wMs-Me-Gc3" secondAttribute="trailing" id="2rM-mT-mjX"/>
+                            <constraint firstItem="b8P-gs-Tv6" firstAttribute="bottom" secondItem="wMs-Me-Gc3" secondAttribute="bottom" id="CZV-rG-6da"/>
+                            <constraint firstItem="wMs-Me-Gc3" firstAttribute="top" secondItem="b8P-gs-Tv6" secondAttribute="top" id="VL5-ue-1pC"/>
+                            <constraint firstItem="wMs-Me-Gc3" firstAttribute="leading" secondItem="b8P-gs-Tv6" secondAttribute="leading" id="j2k-NH-GqN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="도시 상세 정보" id="YEq-nt-RTb"/>
+                    <connections>
+                        <outlet property="travelTableView" destination="wMs-Me-Gc3" id="pyK-xf-lk9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2WI-d8-BZg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1987" y="1461"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="hSd-wQ-VmN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WnD-A6-GUS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="OxV-tg-Tbh"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TPY-kv-xP0">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Eay-QI-D2B" kind="relationship" relationship="rootViewController" id="weh-VD-Lyz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vFl-br-6eQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1060" y="1461"/>
         </scene>
     </scenes>
     <resources>
