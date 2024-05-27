@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,35 +26,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T6H-S9-rrJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1985" y="4"/>
-        </scene>
-        <!--Restaurant List View Controller-->
-        <scene sceneID="mRh-jK-mIT">
-            <objects>
-                <tableViewController id="ghT-qT-jUn" customClass="RestaurantListViewController" customModule="SeSac_0524_TravelMagazine" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="57M-kq-mNx">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rnd-B2-uet">
-                                <rect key="frame" x="0.0" y="50" width="393" height="44.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rnd-B2-uet" id="RLE-y0-SQq">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="44.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ghT-qT-jUn" id="r7c-AL-aRe"/>
-                            <outlet property="delegate" destination="ghT-qT-jUn" id="vfJ-LV-8Ml"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="UxK-0y-iTv"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dfb-ir-4ZF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1987" y="745"/>
         </scene>
         <!--매거진-->
         <scene sceneID="XYB-Co-60p">
@@ -80,6 +52,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="uK6-Ss-4qL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="M8k-Ub-fqL">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -104,12 +77,54 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ghT-qT-jUn" kind="relationship" relationship="rootViewController" id="Jev-hi-mpy"/>
+                        <segue destination="ZWy-Rd-DFY" kind="relationship" relationship="rootViewController" id="vhl-zq-6Jq"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NQV-2N-7u1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1060" y="745"/>
+        </scene>
+        <!--Restaurant List View Controller-->
+        <scene sceneID="YFV-5f-X5X">
+            <objects>
+                <viewController id="ZWy-Rd-DFY" customClass="RestaurantListViewController" customModule="SeSac_0524_TravelMagazine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VQt-RF-GQV">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="EgW-mb-Mxa">
+                                <rect key="frame" x="0.0" y="103" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ZWy-Rd-DFY" id="HV6-fh-U7h"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="prE-DV-XZw">
+                                <rect key="frame" x="0.0" y="159" width="393" height="610"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KaR-zN-znL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KaR-zN-znL" firstAttribute="bottom" secondItem="prE-DV-XZw" secondAttribute="bottom" id="2tp-Ao-dPy"/>
+                            <constraint firstItem="EgW-mb-Mxa" firstAttribute="top" secondItem="KaR-zN-znL" secondAttribute="top" id="OC1-lU-6sS"/>
+                            <constraint firstItem="prE-DV-XZw" firstAttribute="top" secondItem="EgW-mb-Mxa" secondAttribute="bottom" id="ZWf-Ed-jT2"/>
+                            <constraint firstItem="KaR-zN-znL" firstAttribute="trailing" secondItem="prE-DV-XZw" secondAttribute="trailing" id="Zyz-g8-Fty"/>
+                            <constraint firstItem="prE-DV-XZw" firstAttribute="leading" secondItem="KaR-zN-znL" secondAttribute="leading" id="bTm-C3-Wud"/>
+                            <constraint firstItem="EgW-mb-Mxa" firstAttribute="leading" secondItem="KaR-zN-znL" secondAttribute="leading" id="cA9-4k-bI2"/>
+                            <constraint firstAttribute="trailing" secondItem="EgW-mb-Mxa" secondAttribute="trailing" id="vdC-V2-QTu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Go4-7C-beW"/>
+                    <connections>
+                        <outlet property="restaurantTableView" destination="prE-DV-XZw" id="KwL-bZ-y7Q"/>
+                        <outlet property="searchBar" destination="EgW-mb-Mxa" id="dPi-6w-BLb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3yd-1p-KtE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1984" y="744"/>
         </scene>
     </scenes>
     <resources>
