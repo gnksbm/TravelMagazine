@@ -9,23 +9,35 @@
     </dependencies>
     <scenes>
         <!--Magazine View Controller-->
-        <scene sceneID="e1P-jK-DF3">
+        <scene sceneID="dkO-ae-Hnd">
             <objects>
-                <tableViewController id="TBN-0t-5mw" customClass="MagazineViewController" customModule="SeSac_0524_TravelMagazine" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="a5g-m2-h2i">
+                <viewController id="i3K-ti-tKn" customClass="MagazineViewController" customModule="SeSac_0524_TravelMagazine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ld7-yH-6ZY">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WFC-ze-4Cs">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8iu-ZF-xbB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <connections>
-                            <outlet property="dataSource" destination="TBN-0t-5mw" id="pCD-YE-SV5"/>
-                            <outlet property="delegate" destination="TBN-0t-5mw" id="g43-LW-q0H"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="4Zn-z6-b5M"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="T6H-S9-rrJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="8iu-ZF-xbB" firstAttribute="bottom" secondItem="WFC-ze-4Cs" secondAttribute="bottom" id="DKV-wB-SWZ"/>
+                            <constraint firstItem="8iu-ZF-xbB" firstAttribute="trailing" secondItem="WFC-ze-4Cs" secondAttribute="trailing" id="JrR-6n-sZS"/>
+                            <constraint firstItem="WFC-ze-4Cs" firstAttribute="top" secondItem="8iu-ZF-xbB" secondAttribute="top" id="puj-qk-hZU"/>
+                            <constraint firstItem="WFC-ze-4Cs" firstAttribute="leading" secondItem="8iu-ZF-xbB" secondAttribute="leading" id="x31-JD-hf4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cId-S0-y4E"/>
+                    <connections>
+                        <outlet property="tableView" destination="WFC-ze-4Cs" id="bx8-aZ-Otq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LiG-NH-yFQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1985" y="4"/>
+            <point key="canvasLocation" x="1984" y="4"/>
         </scene>
         <!--매거진-->
         <scene sceneID="XYB-Co-60p">
@@ -39,7 +51,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="TBN-0t-5mw" kind="relationship" relationship="rootViewController" id="JAG-AV-p7W"/>
+                        <segue destination="i3K-ti-tKn" kind="relationship" relationship="rootViewController" id="SvN-gM-AbM"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jo5-fl-LUZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -7,9 +7,10 @@
 
 import UIKit
 
-final class MagazineViewController: UITableViewController {
-    private let magazineInfo = MagazineInfo()
+final class MagazineViewController: UIViewController {
+    private let magazineList = MagazineInfo().magazine
     
+    @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(MagazineTableViewCell.self)
@@ -19,15 +20,15 @@ final class MagazineViewController: UITableViewController {
 }
 
 // MARK: TableView
-extension MagazineViewController {
-    override func tableView(
+extension MagazineViewController: UITableViewDataSource {
+    func tableView(
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        magazineInfo.magazine.count
+        magazineList.count
     }
     
-    override func tableView(
+    func tableView(
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
@@ -35,7 +36,7 @@ extension MagazineViewController {
             MagazineTableViewCell.self,
             for: indexPath
         )
-        cell.configureCell(magazine: magazineInfo.magazine[indexPath.row])
+        cell.configureCell(magazine: magazineList[indexPath.row])
         return cell
     }
 }
