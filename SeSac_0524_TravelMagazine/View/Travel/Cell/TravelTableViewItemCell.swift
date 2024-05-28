@@ -48,7 +48,7 @@ class TravelTableViewItemCell: UITableViewCell, TravelTableViewCell {
         }
     }
     
-    func evaluteGrade(
+    private func evaluteGrade(
         value: Double,
         maximum: Int,
         closure: (_ index: Int, _ isFullValue: Bool) -> Void

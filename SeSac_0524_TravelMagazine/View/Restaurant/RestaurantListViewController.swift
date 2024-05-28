@@ -14,16 +14,28 @@ final class RestaurantListViewController: UIViewController {
             restaurantTableView.reloadData()
         }
     }
+    
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var restaurantTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTableView()
+        configureSearchBar()
+        configureNavigation()
+    }
+    
+    private func configureTableView() {
         restaurantTableView.register(RestaurantTableViewCell.self)
         restaurantTableView.separatorStyle = .none
         restaurantTableView.dataSource = self
+    }
+    
+    private func configureSearchBar() {
         searchBar.delegate = self
-        
+    }
+    
+    private func configureNavigation() {
         navigationItem.leftBarButtonItem = makeMenuButton()
     }
     

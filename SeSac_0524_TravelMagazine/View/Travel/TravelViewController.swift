@@ -9,6 +9,7 @@ import UIKit
 
 final class TravelViewController: UIViewController {
     private let list = TravelInfo().travel
+    
     @IBOutlet var travelTableView: UITableView!
     
     override func viewDidLoad() {

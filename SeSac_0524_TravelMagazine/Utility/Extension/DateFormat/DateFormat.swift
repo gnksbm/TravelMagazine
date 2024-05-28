@@ -7,18 +7,6 @@
 
 import Foundation
 
-extension String {
-    func formatted(dateFormat: DateFormat) -> Date? {
-        dateFormat.formatter.date(from: self)
-    }
-}
-
-extension Date {
-    func formatted(dateFormat: DateFormat) -> String {
-        dateFormat.formatter.string(from: self)
-    }
-}
-
 enum DateFormat: String {
     private static var cachedStorage = [DateFormat: DateFormatter]()
     

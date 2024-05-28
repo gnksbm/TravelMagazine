@@ -11,6 +11,7 @@ final class MagazineViewController: UIViewController {
     private let magazineList = MagazineInfo().magazine
     
     @IBOutlet var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(MagazineTableViewCell.self)
