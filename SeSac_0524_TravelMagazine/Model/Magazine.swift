@@ -15,11 +15,21 @@ struct Magazine {
     let link: String
     
     var formattedDate: String? {
-        let dateformatter = DateFormatter()
-        dateformatter.dateFormat = "yyMMdd"
-        guard let formatted = dateformatter.date(from: date) else { return nil }
-        dateformatter.dateFormat = "yy년 MM월 dd일"
-        return dateformatter.string(from: formatted)
+        guard let formattedString = date.formatted(dateFormat: .magazineInput)
+        else { return nil }
+        return formattedString.formatted(dateFormat: .magazineOutput)
+        /* 
+         TODO: DateFormatter 재사용으로 인한 퍼포먼스 개선 확인 필요함
+         인스턴스 생성 후 앱 종료시까지 메모리에 지속 할당되기에
+         기존 로직과 비교하는 성능 테스트 방법 공부하여 검증 필요
+         https://velog.io/@qwerty3345/Swift-DateFormatter는-당신의-생각보다-비싸다
+         https://sarunw.com/posts/how-expensive-is-dateformatter/
+         */
+//        let dateformatter = DateFormatter()
+//        dateformatter.dateFormat = "yyMMdd"
+//        guard let formatted = dateformatter.date(from: date) else { return nil }
+//        dateformatter.dateFormat = "yy년 MM월 dd일"
+//        return dateformatter.string(from: formatted)
     }
 }
 

@@ -28,6 +28,7 @@
 		BECE59952C0600D200CFC442 /* TravelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECE59942C0600D200CFC442 /* TravelTableViewCell.swift */; };
 		BECE59982C06048000CFC442 /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECE59972C06048000CFC442 /* UITableViewCell+.swift */; };
 		BECE599A2C06049600CFC442 /* UITableViewHeaderFooterView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECE59992C06049600CFC442 /* UITableViewHeaderFooterView+.swift */; };
+		BECE59A12C0611A100CFC442 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECE59A02C0611A100CFC442 /* DateFormat.swift */; };
 		BEF281802C05DFDC009EDF7E /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2817F2C05DFDC009EDF7E /* ReuseIdentifiable.swift */; };
 		BEF281872C05FCFE009EDF7E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BEF281862C05FCFE009EDF7E /* Kingfisher */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		BECE59942C0600D200CFC442 /* TravelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTableViewCell.swift; sourceTree = "<group>"; };
 		BECE59972C06048000CFC442 /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
 		BECE59992C06049600CFC442 /* UITableViewHeaderFooterView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewHeaderFooterView+.swift"; sourceTree = "<group>"; };
+		BECE59A02C0611A100CFC442 /* DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
 		BEF2817F2C05DFDC009EDF7E /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,9 +198,18 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		BECE599F2C06119800CFC442 /* DateFormat */ = {
+			isa = PBXGroup;
+			children = (
+				BECE59A02C0611A100CFC442 /* DateFormat.swift */,
+			);
+			path = DateFormat;
+			sourceTree = "<group>";
+		};
 		BEF2817E2C05DFAD009EDF7E /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				BECE599F2C06119800CFC442 /* DateFormat */,
 				BECE59962C06046E00CFC442 /* ReuseIdentifiable */,
 				BE8B34BC2C0465B9002F7020 /* UIViewController+.swift */,
 			);
@@ -292,6 +303,7 @@
 				BE8B34BD2C0465B9002F7020 /* UIViewController+.swift in Sources */,
 				BE2848F22C00C08400D5E817 /* MagazineTableViewCell.swift in Sources */,
 				BE8B34C12C049F50002F7020 /* TravelViewController.swift in Sources */,
+				BECE59A12C0611A100CFC442 /* DateFormat.swift in Sources */,
 				BE28491A2C00C48800D5E817 /* RestaurantListViewController.swift in Sources */,
 				BE2848D72C00B7D800D5E817 /* AppDelegate.swift in Sources */,
 				BE8B34C42C04A020002F7020 /* TravelTableViewItemCell.swift in Sources */,
