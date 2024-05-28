@@ -38,12 +38,27 @@ class TravelTableViewItemCell: UITableViewCell {
         }
         if let grade = data.grade {
             let starViewArr = starStackView.arrangedSubviews
-            (1...Int(grade)).forEach { index in
-                starViewArr[index - 1].tintColor = .systemYellow
+            evaluteGrade(value: grade, maximum: 5) { index, isFullValue in
+                if isFullValue {
+                    starViewArr[index - 1].tintColor = .systemYellow
+                } else {
+                    starViewArr[index - 1].tintColor = .systemGray5
+                }
             }
-            (Int(grade)...5).forEach { index in
-                starViewArr[index - 1].tintColor = .systemGray5
-            }
+        }
+    }
+    
+    func evaluteGrade(
+        value: Double,
+        maximum: Int,
+        closure: (_ index: Int, _ isFullValue: Bool) -> Void
+    ) {
+        let filledRange = Int(value)
+        (0..<filledRange).forEach { index in
+            closure(index, true)
+        }
+        (filledRange..<maximum).forEach { index in
+            closure(index, false)
         }
     }
     

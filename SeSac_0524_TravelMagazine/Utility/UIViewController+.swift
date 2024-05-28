@@ -1,5 +1,5 @@
 //
-//  UIViewController.swift
+//  UIViewController+.swift
 //  SeSac_0524_TravelMagazine
 //
 //  Created by gnksbm on 5/27/24.
