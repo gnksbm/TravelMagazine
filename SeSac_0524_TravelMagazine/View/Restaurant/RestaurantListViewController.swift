@@ -78,7 +78,7 @@ extension RestaurantListViewController: UITableViewDataSource {
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
-            RestaurantTableViewCell.self,
+            cellType: RestaurantTableViewCell.self,
             for: indexPath
         )
         cell.configureCell(

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TravelTableViewADCell: UITableViewCell {
+class TravelTableViewADCell: UITableViewCell, TravelTableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var adLabel: UILabel!
     

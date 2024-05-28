@@ -33,7 +33,7 @@ extension MagazineViewController: UITableViewDataSource {
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
-            MagazineTableViewCell.self,
+            cellType: MagazineTableViewCell.self,
             for: indexPath
         )
         cell.configureCell(magazine: magazineList[indexPath.row])

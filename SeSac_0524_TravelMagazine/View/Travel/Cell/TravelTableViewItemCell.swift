@@ -9,7 +9,7 @@ import UIKit
 
 import Kingfisher
 
-class TravelTableViewItemCell: UITableViewCell {
+class TravelTableViewItemCell: UITableViewCell, TravelTableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subtitleLabel: UILabel!
     @IBOutlet var starStackView: UIStackView!
@@ -40,9 +40,9 @@ class TravelTableViewItemCell: UITableViewCell {
             let starViewArr = starStackView.arrangedSubviews
             evaluteGrade(value: grade, maximum: 5) { index, isFullValue in
                 if isFullValue {
-                    starViewArr[index - 1].tintColor = .systemYellow
+                    starViewArr[index].tintColor = .systemYellow
                 } else {
-                    starViewArr[index - 1].tintColor = .systemGray5
+                    starViewArr[index].tintColor = .systemGray5
                 }
             }
         }

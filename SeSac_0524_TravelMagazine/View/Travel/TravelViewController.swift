@@ -36,24 +36,21 @@ extension TravelViewController: UITableViewDataSource {
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
         let data = list[indexPath.row]
-        var cell: UITableViewCell
+        var cell: TravelTableViewCell
         if data.ad {
             cell = tableView.dequeueReusableCell(
-                TravelTableViewADCell.self,
+                cellType: TravelTableViewADCell.self,
                 for: indexPath
-            )
-            (cell as? TravelTableViewADCell)?.configureCell(
-                data: data
             )
         } else {
             cell = tableView.dequeueReusableCell(
-                TravelTableViewItemCell.self,
+                cellType: TravelTableViewItemCell.self,
                 for: indexPath
             )
-            (cell as? TravelTableViewItemCell)?.configureCell(
-                data: data
-            )
         }
+        cell.configureCell(
+            data: data
+        )
         return cell
     }
 }
