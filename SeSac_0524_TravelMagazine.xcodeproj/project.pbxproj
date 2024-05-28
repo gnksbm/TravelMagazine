@@ -131,8 +131,7 @@
 		BE2849202C00EF4600D5E817 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				BE2849222C00EFCB00D5E817 /* UITableView+.swift */,
-				BE8B34BC2C0465B9002F7020 /* UIViewController+.swift */,
+				BEF2817E2C05DFAD009EDF7E /* Extension */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -146,6 +145,15 @@
 				BE2848E42C00B7DB00D5E817 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		BEF2817E2C05DFAD009EDF7E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BE2849222C00EFCB00D5E817 /* UITableView+.swift */,
+				BE8B34BC2C0465B9002F7020 /* UIViewController+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
