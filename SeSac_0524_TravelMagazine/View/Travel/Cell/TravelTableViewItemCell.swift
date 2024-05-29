@@ -65,6 +65,8 @@ class TravelTableViewItemCell: UITableViewCell, TravelTableViewCell {
         }
         
         guard let likeButtonImageView = likeButton.imageView else { return }
+        
+        // TODO: 제약 충돌 해결해야함
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(
                 equalTo: mainImageView.topAnchor
