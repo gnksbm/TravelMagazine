@@ -63,10 +63,14 @@ class TravelTableViewItemCell: UITableViewCell, TravelTableViewCell {
             $0.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview($0)
         }
+        let imageViewHeightConstraint = mainImageView.heightAnchor.constraint(
+            equalTo: mainImageView.widthAnchor,
+            multiplier: 6/5
+        )
+        imageViewHeightConstraint.priority = UILayoutPriority(999)
         
         guard let likeButtonImageView = likeButton.imageView else { return }
         
-        // TODO: 제약 충돌 해결해야함
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(
                 equalTo: mainImageView.topAnchor
@@ -133,10 +137,7 @@ class TravelTableViewItemCell: UITableViewCell, TravelTableViewCell {
                 equalTo: contentView.widthAnchor,
                 multiplier: 1/4
             ),
-            mainImageView.heightAnchor.constraint(
-                equalTo: mainImageView.widthAnchor,
-                multiplier: 6/5
-            ),
+            imageViewHeightConstraint,
             
             likeButton.topAnchor.constraint(
                 equalTo: mainImageView.topAnchor
