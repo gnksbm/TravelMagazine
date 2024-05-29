@@ -48,7 +48,7 @@ final class CityTableViewCell: UITableViewCell {
     
     private let explainLabelBackgroundView = {
         let view = UIView()
-        view.backgroundColor = .darkGray.withAlphaComponent(0.8)
+        view.backgroundColor = .black.withAlphaComponent(0.6)
         return view
     }()
     

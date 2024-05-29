@@ -11,6 +11,7 @@ final class TravelDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setPlaceHolderView(message: "관광지 화면")
+        navigationController?.navigationBar.topItem?.title = ""
     }
 }
 
