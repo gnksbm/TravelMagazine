@@ -34,6 +34,8 @@
 		BED7044E2C0737FD00159680 /* ADViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED7044D2C0737FD00159680 /* ADViewController.swift */; };
 		BED704502C0756EA00159680 /* TravelTableViewItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BED7044F2C0756EA00159680 /* TravelTableViewItemCell.xib */; };
 		BED704522C07609E00159680 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED704512C07609E00159680 /* City.swift */; };
+		BED704552C07627F00159680 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED704542C07627F00159680 /* CityViewController.swift */; };
+		BED704572C0762C000159680 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED704562C0762C000159680 /* CityTableViewCell.swift */; };
 		BEF281802C05DFDC009EDF7E /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2817F2C05DFDC009EDF7E /* ReuseIdentifiable.swift */; };
 		BEF281872C05FCFE009EDF7E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BEF281862C05FCFE009EDF7E /* Kingfisher */; };
 /* End PBXBuildFile section */
@@ -68,6 +70,8 @@
 		BED7044D2C0737FD00159680 /* ADViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADViewController.swift; sourceTree = "<group>"; };
 		BED7044F2C0756EA00159680 /* TravelTableViewItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TravelTableViewItemCell.xib; sourceTree = "<group>"; };
 		BED704512C07609E00159680 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		BED704542C07627F00159680 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
+		BED704562C0762C000159680 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		BEF2817F2C05DFDC009EDF7E /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +130,7 @@
 				BECE599D2C0604FD00CFC442 /* Magazine */,
 				BECE599C2C0604F800CFC442 /* Restaurant */,
 				BECE599B2C0604F500CFC442 /* Travel */,
+				BED704532C07626900159680 /* City */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -221,6 +226,15 @@
 			path = DateFormat;
 			sourceTree = "<group>";
 		};
+		BED704532C07626900159680 /* City */ = {
+			isa = PBXGroup;
+			children = (
+				BED704542C07627F00159680 /* CityViewController.swift */,
+				BED704562C0762C000159680 /* CityTableViewCell.swift */,
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
 		BEF2817E2C05DFAD009EDF7E /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +326,7 @@
 			files = (
 				BE2848DB2C00B7D800D5E817 /* MagazineViewController.swift in Sources */,
 				BED7044E2C0737FD00159680 /* ADViewController.swift in Sources */,
+				BED704572C0762C000159680 /* CityTableViewCell.swift in Sources */,
 				BEF281802C05DFDC009EDF7E /* ReuseIdentifiable.swift in Sources */,
 				BED704522C07609E00159680 /* City.swift in Sources */,
 				BE2848ED2C00B85C00D5E817 /* Magazine.swift in Sources */,
@@ -321,6 +336,7 @@
 				BE8B34BD2C0465B9002F7020 /* UIViewController+.swift in Sources */,
 				BECE59A72C0617F300CFC442 /* Date+.swift in Sources */,
 				BE2848F22C00C08400D5E817 /* MagazineTableViewCell.swift in Sources */,
+				BED704552C07627F00159680 /* CityViewController.swift in Sources */,
 				BE8B34C12C049F50002F7020 /* TravelViewController.swift in Sources */,
 				BED7044C2C07374800159680 /* TravelDetailViewController.swift in Sources */,
 				BECE59A12C0611A100CFC442 /* DateFormat.swift in Sources */,

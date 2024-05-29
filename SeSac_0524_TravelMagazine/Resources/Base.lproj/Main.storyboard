@@ -72,6 +72,7 @@
                         <segue destination="lGy-AZ-o8F" kind="relationship" relationship="viewControllers" id="Wcv-Sa-WPU"/>
                         <segue destination="dCe-dP-qCd" kind="relationship" relationship="viewControllers" id="SxE-26-0be"/>
                         <segue destination="WnD-A6-GUS" kind="relationship" relationship="viewControllers" id="gG9-dx-DUA"/>
+                        <segue destination="ROY-Wd-r5D" kind="relationship" relationship="viewControllers" id="TP1-6V-SSf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bS-BI-moo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -95,7 +96,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NQV-2N-7u1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1060" y="745"/>
+            <point key="canvasLocation" x="1985.4961832061067" y="744.36619718309862"/>
         </scene>
         <!--Restaurant List View Controller-->
         <scene sceneID="YFV-5f-X5X">
@@ -137,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3yd-1p-KtE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1984" y="744"/>
+            <point key="canvasLocation" x="2910.6870229007632" y="743.66197183098598"/>
         </scene>
         <!--도시 상세 정보-->
         <scene sceneID="AZb-DQ-sNe">
@@ -168,13 +169,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2WI-d8-BZg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1987" y="1461"/>
+            <point key="canvasLocation" x="2912.2137404580153" y="1460.5633802816901"/>
         </scene>
-        <!--Item-->
+        <!--도시-->
         <scene sceneID="hSd-wQ-VmN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WnD-A6-GUS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="OxV-tg-Tbh"/>
+                    <tabBarItem key="tabBarItem" title="도시" image="building" catalog="system" id="OxV-tg-Tbh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TPY-kv-xP0">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -187,10 +188,74 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vFl-br-6eQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1060" y="1461"/>
+            <point key="canvasLocation" x="1985.4961832061067" y="1460.5633802816901"/>
+        </scene>
+        <!--인기 도시-->
+        <scene sceneID="2oM-3U-iht">
+            <objects>
+                <viewController id="qoS-A4-bhX" customClass="CityViewController" customModule="SeSac_0524_TravelMagazine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hNQ-rO-gjf">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hqr-JW-z11">
+                                <rect key="frame" x="24" y="111" width="345" height="32"/>
+                                <segments>
+                                    <segment title="모두"/>
+                                    <segment title="국내"/>
+                                    <segment title="해외"/>
+                                </segments>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Web-1K-yic">
+                                <rect key="frame" x="0.0" y="162" width="393" height="607"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eiR-fK-bZD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hqr-JW-z11" firstAttribute="top" secondItem="eiR-fK-bZD" secondAttribute="top" constant="8" id="4DB-xU-zVF"/>
+                            <constraint firstItem="hqr-JW-z11" firstAttribute="leading" secondItem="eiR-fK-bZD" secondAttribute="leading" constant="24" id="UrP-N2-JGu"/>
+                            <constraint firstItem="Web-1K-yic" firstAttribute="leading" secondItem="eiR-fK-bZD" secondAttribute="leading" id="VU0-HM-ppJ"/>
+                            <constraint firstItem="eiR-fK-bZD" firstAttribute="trailing" secondItem="Web-1K-yic" secondAttribute="trailing" id="a1h-uh-aQm"/>
+                            <constraint firstItem="Web-1K-yic" firstAttribute="top" secondItem="hqr-JW-z11" secondAttribute="bottom" constant="20" id="cCk-Iv-ylQ"/>
+                            <constraint firstItem="eiR-fK-bZD" firstAttribute="bottom" secondItem="Web-1K-yic" secondAttribute="bottom" id="lzD-Lw-dHv"/>
+                            <constraint firstItem="eiR-fK-bZD" firstAttribute="trailing" secondItem="hqr-JW-z11" secondAttribute="trailing" constant="24" id="qHe-T2-JGg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="인기 도시" id="iWp-uF-7zp"/>
+                    <connections>
+                        <outlet property="cityTableView" destination="Web-1K-yic" id="lTc-hN-dtr"/>
+                        <outlet property="segmentControl" destination="hqr-JW-z11" id="szW-rG-PpZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rNj-ti-Ioq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2911" y="2185"/>
+        </scene>
+        <!--인기 도시-->
+        <scene sceneID="Idj-78-Xit">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ROY-Wd-r5D" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="인기 도시" image="flame" catalog="system" id="gTg-eZ-RSr"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oHL-ZO-fFn">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qoS-A4-bhX" kind="relationship" relationship="rootViewController" id="FPR-eK-FRG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G8S-ki-46V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1984" y="2185"/>
         </scene>
     </scenes>
     <resources>
+        <image name="building" catalog="system" width="110" height="128"/>
+        <image name="flame" catalog="system" width="106" height="128"/>
         <image name="fork.knife" catalog="system" width="94" height="128"/>
         <image name="magazine" catalog="system" width="110" height="128"/>
         <systemColor name="systemBackgroundColor">

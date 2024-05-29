@@ -47,10 +47,10 @@ class TravelTableViewItemCell: UITableViewCell, TravelTableViewCell {
         mainImageView.layer.cornerRadius = 8
         mainImageView.clipsToBounds = true
         mainImageView.backgroundColor = .lightGray
-        configureConstraint()
+        configureLayout()
     }
     
-    private func configureConstraint() {
+    private func configureLayout() {
         [
             titleLabel,
             subtitleLabel,
