@@ -19,12 +19,15 @@ final class TravelViewController: UIViewController {
     
     private func configureTableView() {
         travelTableView.dataSource = self
+        travelTableView.delegate = self
         travelTableView.registerNib(TravelTableViewItemCell.self)
         travelTableView.registerNib(TravelTableViewADCell.self)
+        travelTableView.rowHeight = UITableView.automaticDimension
+        travelTableView.estimatedRowHeight = 152
     }
 }
 
-extension TravelViewController: UITableViewDataSource {
+extension TravelViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
@@ -53,5 +56,41 @@ extension TravelViewController: UITableViewDataSource {
             data: data
         )
         return cell
+    }
+    
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
+        let data = list[indexPath.row]
+        if data.ad {
+            let vc = ADViewController()
+            let navigationController = UINavigationController(
+                rootViewController: vc
+            )
+            navigationController.modalPresentationStyle = .fullScreen
+            vc.title = "광고 화면"
+            let xButton = UIBarButtonItem(
+                image: UIImage(systemName: "xmark")?
+                    .withConfiguration(
+                        UIImage.SymbolConfiguration(
+                            font: .boldSystemFont(ofSize: 15)
+                        )
+                    ),
+                primaryAction: UIAction {
+                    _ in
+                    navigationController.dismiss(animated: true)
+                }
+            )
+            xButton.tintColor = .black
+            vc.navigationItem.leftBarButtonItem = xButton
+            present(navigationController, animated: true)
+        } else {
+            let vc = TravelDetailViewController()
+            vc.title = "관광지 화면"
+            navigationController?.pushViewController(vc, animated: true)
+            navigationController?.navigationBar.tintColor = .black
+            vc.navigationItem.backButtonTitle = nil
+        }
     }
 }
