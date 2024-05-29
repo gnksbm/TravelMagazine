@@ -16,44 +16,51 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hba-H8-HYn">
-                        <rect key="frame" x="16" y="8" width="288" height="73"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3jJ-60-Ph1">
+                        <rect key="frame" x="16" y="0.0" width="288" height="89"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hba-H8-HYn">
+                                <rect key="frame" x="16" y="20" width="256" height="49"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" AD " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fky-NJ-IVu">
+                                <rect key="frame" x="252" y="4" width="32" height="18"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="GzB-Z7-ZRE"/>
+                                    <constraint firstAttribute="width" constant="32" id="SW5-QW-T1P"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.97254902119999997" green="0.83529412749999998" blue="0.83137255909999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="O4O-pO-Nbz"/>
+                            <constraint firstItem="Hba-H8-HYn" firstAttribute="leading" secondItem="3jJ-60-Ph1" secondAttribute="leading" constant="16" id="4xq-i8-rTm"/>
+                            <constraint firstAttribute="trailing" secondItem="Hba-H8-HYn" secondAttribute="trailing" constant="16" id="Axz-uk-Bav"/>
+                            <constraint firstItem="Fky-NJ-IVu" firstAttribute="top" secondItem="3jJ-60-Ph1" secondAttribute="top" constant="4" id="SPQ-bG-lej"/>
+                            <constraint firstAttribute="bottom" secondItem="Hba-H8-HYn" secondAttribute="bottom" constant="20" id="WZf-hx-eBy"/>
+                            <constraint firstItem="Hba-H8-HYn" firstAttribute="top" secondItem="3jJ-60-Ph1" secondAttribute="top" constant="20" id="hhf-1G-bPk"/>
+                            <constraint firstAttribute="trailing" secondItem="Fky-NJ-IVu" secondAttribute="trailing" constant="4" id="ocZ-FE-5BJ"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" AD " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fky-NJ-IVu">
-                        <rect key="frame" x="268" y="12" width="32" height="18"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="18" id="GzB-Z7-ZRE"/>
-                            <constraint firstAttribute="width" constant="32" id="SW5-QW-T1P"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Hba-H8-HYn" secondAttribute="trailing" constant="16" id="0bG-zA-gqG"/>
-                    <constraint firstItem="Hba-H8-HYn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="7e6-2H-P6M"/>
-                    <constraint firstItem="Hba-H8-HYn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="8KE-a2-UQ3"/>
-                    <constraint firstItem="Fky-NJ-IVu" firstAttribute="top" secondItem="Hba-H8-HYn" secondAttribute="top" constant="4" id="BVI-mn-YYG"/>
-                    <constraint firstAttribute="bottom" secondItem="Hba-H8-HYn" secondAttribute="bottom" constant="8" id="Ut5-z2-yRC"/>
-                    <constraint firstItem="Hba-H8-HYn" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="ZgT-wh-LKh"/>
-                    <constraint firstItem="Hba-H8-HYn" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="voM-mO-6ad"/>
-                    <constraint firstItem="Hba-H8-HYn" firstAttribute="trailing" secondItem="Fky-NJ-IVu" secondAttribute="trailing" constant="4" id="x0M-qm-Ube"/>
+                    <constraint firstAttribute="bottom" secondItem="3jJ-60-Ph1" secondAttribute="bottom" id="5r3-CU-uul"/>
+                    <constraint firstItem="3jJ-60-Ph1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="DTP-Mu-6Tf"/>
+                    <constraint firstAttribute="trailing" secondItem="3jJ-60-Ph1" secondAttribute="trailing" constant="16" id="KnA-FX-HtN"/>
+                    <constraint firstItem="3jJ-60-Ph1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Sfr-pK-JCA"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="adLabel" destination="Fky-NJ-IVu" id="UT9-VO-gx1"/>
-                <outlet property="titleLabel" destination="Hba-H8-HYn" id="UBi-Qx-a70"/>
+                <outlet property="labelBackgroundView" destination="3jJ-60-Ph1" id="ozh-fV-YNC"/>
+                <outlet property="titleLabel" destination="Hba-H8-HYn" id="B2A-sq-bO4"/>
             </connections>
             <point key="canvasLocation" x="48.854961832061065" y="84.154929577464799"/>
         </tableViewCell>

@@ -14,6 +14,35 @@ struct Travel {
     let save: Int?
     let like: Bool?
     let ad: Bool
+    
+    var subDescription: String? {
+        guard let saveString = save?.formatted() else { return nil }
+        return "(\(saveString)) · 저장 \(saveString)"
+    }
+    
+    var likeImage: UIImage? {
+        guard let like else { return nil }
+        let imageName = like ? "heart.fill" : "heart"
+        return UIImage(systemName: imageName)
+    }
+    
+    var imageURL: URL? {
+        guard let travel_image else { return nil }
+        return URL(string: travel_image)
+    }
+    
+    var gradeColorDic: [Int: UIColor] {
+        var imageDic = [Int: UIColor]()
+        guard let grade else { return imageDic }
+        let filledRange = Int(grade)
+        (0..<filledRange).forEach { index in
+            imageDic[index] = UIColor.systemYellow
+        }
+        (filledRange..<5).forEach { index in
+            imageDic[index] = UIColor.systemGray5
+        }
+        return imageDic
+    }
 }
 
 struct TravelInfo {

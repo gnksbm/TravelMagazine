@@ -26,48 +26,16 @@ class TravelTableViewItemCell: UITableViewCell, TravelTableViewCell {
     func configureCell(data: Travel) {
         titleLabel.text = data.title
         subtitleLabel.text = data.description
-        if let saveCount = data.save {
-            let saveStr = saveCount.formatted()
-            descriptionLabel.text = "(\(saveStr)) · 저장 \(saveStr)"
-        }
-        if let imageUrlString = data.travel_image {
-            mainImageView.kf.setImage(with: URL(string: imageUrlString))
-        }
-        if let like = data.like {
-            let imageName = like ? "heart.fill" : "heart"
-            likeButton.setImage(.init(systemName: imageName), for: .normal)
-        }
-        if let grade = data.grade {
-            let starViewArr = starStackView.arrangedSubviews
-            evaluteGrade(
-                value: grade,
-                maximum: starViewArr.count
-            ) { index, isFullValue in
-                print(index)
-                if isFullValue {
-                    starViewArr[index].tintColor = .systemYellow
-                } else {
-                    starViewArr[index].tintColor = .systemGray5
-                }
-            }
-        }
-    }
-    
-    private func evaluteGrade(
-        value: Double,
-        maximum: Int,
-        closure: (_ index: Int, _ isFullValue: Bool) -> Void
-    ) {
-        let filledRange = Int(value)
-        (0..<filledRange).forEach { index in
-            closure(index, true)
-        }
-        (filledRange..<maximum).forEach { index in
-            closure(index, false)
+        descriptionLabel.text = data.subDescription
+        mainImageView.kf.setImage(with: data.imageURL)
+        likeButton.setImage(data.likeImage, for: .normal)
+        starStackView.arrangedSubviews.forEach { imageView in
+            imageView.tintColor = data.gradeColorDic[imageView.tag]
         }
     }
     
     private func configureUI() {
+        selectionStyle = .none
         titleLabel.font = .boldSystemFont(ofSize: 17)
         subtitleLabel.font = .systemFont(ofSize: 15, weight: .regular)
         subtitleLabel.textColor = .darkGray
@@ -153,7 +121,7 @@ class TravelTableViewItemCell: UITableViewCell, TravelTableViewCell {
             ),
             mainImageView.trailingAnchor.constraint(
                 equalTo: contentView.trailingAnchor,
-                constant: -24
+                constant: -16
             ),
             mainImageView.bottomAnchor.constraint(
                 equalTo: contentView.bottomAnchor,
