@@ -93,17 +93,19 @@ extension CityViewController: UITableViewDataSource {
     }
 }
 
-enum AreaType: Int, CaseIterable {
-    case all, domestic, international
-    
-    var title: String {
-        switch self {
-        case .all:
-            return "모두"
-        case .domestic:
-            return "국내"
-        case .international:
-            return "해외"
+extension CityViewController {
+    enum AreaType: Int, CaseIterable {
+        case all, domestic, international
+        
+        var title: String {
+            switch self {
+            case .all:
+                return "모두"
+            case .domestic:
+                return "국내"
+            case .international:
+                return "해외"
+            }
         }
     }
 }

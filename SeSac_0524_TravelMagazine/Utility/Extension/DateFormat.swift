@@ -24,3 +24,15 @@ enum DateFormat: String {
         }
     }
 }
+
+extension String {
+    func formatted(dateFormat: DateFormat) -> Date? {
+        dateFormat.formatter.date(from: self)
+    }
+}
+
+extension Date {
+    func formatted(dateFormat: DateFormat) -> String {
+        dateFormat.formatter.string(from: self)
+    }
+}

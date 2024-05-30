@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct Restaurant {
     let image: String
@@ -17,6 +18,38 @@ struct Restaurant {
     let category: String
     let price: Int
     let type: Int
+}
+
+extension Restaurant {
+    var location: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(
+            latitude: latitude,
+            longitude: longitude
+        )
+    }
+}
+
+extension Restaurant: Categorizable {
+    typealias Category = String
+}
+
+extension Array where Element == Restaurant {
+    func removeDuplicate(with: [CLLocationCoordinate2D]) -> Self {
+        var locationDic = Dictionary(
+            uniqueKeysWithValues: map { ($0.location, $0) }
+        )
+        with.forEach { locationDic.removeValue(forKey: $0) }
+        return Array(locationDic.values)
+    }
+    
+    func getCenterPoint() -> CLLocationCoordinate2D {
+        let latitude = reduce(0) { $0 + $1.latitude } / Double(count)
+        let longitude = reduce(0) { $0 + $1.longitude } / Double(count)
+        return CLLocationCoordinate2D(
+            latitude: latitude,
+            longitude: longitude
+        )
+    }
 }
 
 struct RestaurantList {

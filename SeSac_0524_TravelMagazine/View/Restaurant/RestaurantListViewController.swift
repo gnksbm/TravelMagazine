@@ -36,28 +36,20 @@ final class RestaurantListViewController: UIViewController {
     }
     
     private func configureNavigation() {
-        navigationItem.leftBarButtonItem = makeMenuButton()
-    }
-    
-    private func makeMenuButton() -> UIBarButtonItem {
-        let buttonNames = Set(list.map { $0.category })
-        var children = buttonNames.map { title in
-            UIAction(title: "\(title)") { [self] action in
-                filteredList = list.filter { title == $0.category }
-                showAlert(message: "\(filteredList.count)개의 결과가 있습니다")
+        navigationItem.leftBarButtonItem = makeFilterMenuButton(
+            originalList: list
+        ) { result in
+            self.filteredList = result
+        }
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "map"),
+            primaryAction: UIAction { _ in
+                self.navigationController?.pushViewController(
+                    MapViewController(),
+                    animated: true
+                )
             }
-        }
-        let allAction = UIAction(title: "전체보기") { [self] _ in
-            filteredList = list
-        }
-        children.insert(allAction, at: 0)
-        let menu = UIMenu(title: "음식종류", children: children)
-        let barButton = UIBarButtonItem(
-            image: .init(systemName: "line.3.horizontal.decrease.circle"),
-            menu: menu
         )
-        barButton.tintColor = .black
-        return barButton
     }
 }
 // MARK: SearchBar
