@@ -9,7 +9,18 @@ import UIKit
 
 protocol Categorizable {
     associatedtype Category: Hashable
+    
     var category: Category { get }
+}
+
+extension Array where Element: Categorizable {
+    func filteredList(byCategory selected: Element.Category) -> Self {
+        filter { $0.category == selected }
+    }
+    
+    mutating func applyFilter(byCategory selected: Element.Category) {
+        self = filter { $0.category == selected }
+    }
 }
 
 extension UIViewController {
@@ -19,11 +30,11 @@ extension UIViewController {
         unfilteredHandler: ((_ unfilteredList: [T]) -> Void)? = nil
     ) -> UIBarButtonItem {
         let categories = Set(originalList.map { $0.category })
-        var menuActions = categories.map { title in
-            UIAction(title: "\(title)") { _ in
-                let filteredList = originalList.filter {
-                    title == $0.category
-                }
+        var menuActions = categories.map { category in
+            UIAction(title: "\(category)") { _ in
+                let filteredList = originalList.filteredList(
+                    byCategory: category
+                ) 
                 filteredHandler(filteredList)
             }
         }

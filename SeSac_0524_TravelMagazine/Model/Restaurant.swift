@@ -29,9 +29,7 @@ extension Restaurant {
     }
 }
 
-extension Restaurant: Categorizable {
-    typealias Category = String
-}
+extension Restaurant: Categorizable { }
 
 extension Array where Element == Restaurant {
     func removeDuplicate(with: [CLLocationCoordinate2D]) -> Self {
