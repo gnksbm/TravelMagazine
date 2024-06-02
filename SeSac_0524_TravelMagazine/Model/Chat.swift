@@ -4,7 +4,7 @@
 //  Created by Den on 2024/05/11.
 //
 
-import Foundation
+import UIKit
 
 enum User: String {
     case hue = "Hue"
@@ -28,6 +28,28 @@ struct ChatRoom {
     let chatroomImage: [String] //채팅방에 속한 유저 이미지
     let chatroomName: String //채팅방 이름
     var chatList: [Chat] = [] //채팅 화면에서 사용할 데이터
+}
+
+extension ChatRoom {
+    var mainImage: UIImage? {
+        guard let imageName = chatroomImage.first else { return nil }
+        return UIImage(named: imageName)
+    }
+    
+    var lastestMessage: String? {
+        chatList.last?.message
+    }
+    
+    var latestDate: String? {
+        let date = chatList.last?.date.formatted(dateFormat: .chatInput)
+        return date?.formatted(dateFormat: .chatOutput)
+    }
+}
+
+extension ChatRoom: Searchable {
+    var searchKeyPath: KeyPath<ChatRoom, String> {
+        \.chatroomName
+    }
 }
 
 //채팅 화면에서 사용할 데이터 구조체

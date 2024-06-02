@@ -12,6 +12,8 @@ enum DateFormat: String {
     
     case magazineInput = "yyMMdd"
     case magazineOutput = "yy년 MM월 dd일"
+    case chatInput = "yyyy-MM-dd HH:mm"
+    case chatOutput = "yy.MM.dd"
     
     var formatter: DateFormatter {
         if let formatter = Self.cachedStorage[self] {
