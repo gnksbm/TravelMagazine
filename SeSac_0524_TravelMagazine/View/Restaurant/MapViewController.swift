@@ -80,7 +80,7 @@ final class MapViewController: UIViewController {
     }
     
     private func configureLayout() {
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         [mapView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0)

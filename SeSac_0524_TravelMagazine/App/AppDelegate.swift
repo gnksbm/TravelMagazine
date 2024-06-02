@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        UINavigationBar.appearance().tintColor = .black
+        UINavigationBar.appearance().tintColor = .label
         return true
     }
 

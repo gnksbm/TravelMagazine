@@ -51,7 +51,7 @@ extension UIViewController {
             label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
         
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
     }
     
     func hideKeyboardOnTap() {

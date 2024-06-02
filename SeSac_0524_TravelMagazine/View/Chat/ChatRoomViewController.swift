@@ -9,6 +9,12 @@ import UIKit
 
 final class ChatRoomViewController: UIViewController {
     private var chatList = [Chat]() {
+        willSet {
+            chatSection = newValue.toSectionModel
+        }
+    }
+    
+    private var chatSection = [ChatSection]() {
         didSet {
             tableView.reloadData()
         }
@@ -22,27 +28,32 @@ final class ChatRoomViewController: UIViewController {
         string: "메세지를 입력하세요",
         attributes: [
             .font: textViewFont,
-            .foregroundColor: UIColor.gray
+            .foregroundColor: UIColor.tertiaryLabel
         ]
     )
     private var textViewHeightConstraint: NSLayoutConstraint!
+    private lazy var textViewHeight = textViewFont.lineHeight
+    + newMessageTextView.layoutMargins.top
+    + newMessageTextView.layoutMargins.bottom
     
     private var isScrolledOnViewWillAppear = false
     
     private lazy var tableView = {
-        let tableView = UITableView()
+        let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.separatorStyle = .none
         tableView.register(ChatRoomTVLeadingCell.self)
         tableView.register(ChatRoomTVTrailingCell.self)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.sectionFooterHeight = .zero
+        tableView.backgroundColor = .systemBackground
         return tableView
     }()
     
     private let newMessageBackgroundView = {
         let view = UIView()
         view.layer.cornerRadius = 10
-        view.backgroundColor = .lightGray.withAlphaComponent(0.1)
+        view.backgroundColor = .tertiarySystemFill
         return view
     }()
     
@@ -61,7 +72,7 @@ final class ChatRoomViewController: UIViewController {
         = UIImage.SymbolConfiguration(pointSize: 20)
         button.configurationUpdateHandler = { button in
             button.tintColor = button.isEnabled ?
-                .gray : .gray.withAlphaComponent(0.5)
+                .secondaryLabel : .tertiaryLabel
         }
         button.isEnabled = false
         button.addTarget(
@@ -93,13 +104,19 @@ final class ChatRoomViewController: UIViewController {
         )
         newMessageTextView.text.removeAll()
         sender.isEnabled = false
+        tableViewScrollToBottom(animated: true)
+        textViewHeightConstraint.constant = textViewHeight
+    }
+    
+    private func tableViewScrollToBottom(animated: Bool) {
+        let lastSectionIndex = tableView.numberOfSections - 1
         tableView.scrollToRow(
             at: IndexPath(
-                row: chatList.count - 1,
-                section: tableView.numberOfSections - 1
+                row: chatSection[lastSectionIndex].chatList.count - 1,
+                section: lastSectionIndex
             ),
             at: .bottom,
-            animated: true
+            animated: animated
         )
     }
     
@@ -108,7 +125,7 @@ final class ChatRoomViewController: UIViewController {
     }
     
     private func configureLayout() {
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         
         [
             tableView,
@@ -127,9 +144,6 @@ final class ChatRoomViewController: UIViewController {
         
         let safeArea = view.safeAreaLayoutGuide
         
-        let textViewHeight = textViewFont.lineHeight
-        + newMessageTextView.layoutMargins.top
-        + newMessageTextView.layoutMargins.bottom
         textViewHeightConstraint = newMessageTextView.frameLayoutGuide
             .heightAnchor.constraint(
                 equalToConstant: textViewHeight
@@ -160,7 +174,8 @@ final class ChatRoomViewController: UIViewController {
                 equalTo: safeArea.trailingAnchor
             ),
             tableView.bottomAnchor.constraint(
-                equalTo: newMessageBackgroundView.topAnchor
+                equalTo: newMessageBackgroundView.topAnchor,
+                constant: -textViewPadding
             ),
             
             newMessageTextView.topAnchor.constraint(
@@ -205,7 +220,7 @@ extension ChatRoomViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.attributedText == textViewPlaceholder {
             textView.text.removeAll()
-            textView.textColor = .black
+            textView.textColor = .label
         }
     }
     
@@ -223,14 +238,7 @@ extension ChatRoomViewController: UITableViewDelegate {
         forRowAt indexPath: IndexPath
     ) {
         if !isScrolledOnViewWillAppear {
-            tableView.scrollToRow(
-                at: IndexPath(
-                    row: chatList.count - 1,
-                    section: tableView.numberOfSections - 1
-                ),
-                at: .bottom,
-                animated: false
-            )
+            tableViewScrollToBottom(animated: false)
             isScrolledOnViewWillAppear = true
         }
     }
@@ -241,23 +249,30 @@ extension ChatRoomViewController: UITableViewDelegate {
     ) -> UIView? {
         let label = UILabel()
         label.textAlignment = .center
+        label.font = .boldSystemFont(ofSize: 14)
+        label.text = chatSection[section].date
+        label.backgroundColor = .tertiarySystemGroupedBackground
         return label
     }
 }
 
 extension ChatRoomViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        chatSection.count
+    }
+    
     func tableView(
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        chatList.count
+        chatSection[section].chatList.count
     }
     
     func tableView(
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
-        let data = chatList[indexPath.row]
+        let data = chatSection[indexPath: indexPath]
         var cell: ChatRoomTableViewCell
         if data.user == .user {
             cell = tableView.dequeueReusableCell(

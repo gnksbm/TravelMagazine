@@ -82,7 +82,7 @@ extension TravelViewController: UITableViewDataSource, UITableViewDelegate {
                     navigationController.dismiss(animated: true)
                 }
             )
-            xButton.tintColor = .black
+            xButton.tintColor = .label
             vc.navigationItem.leftBarButtonItem = xButton
             present(navigationController, animated: true)
         } else {

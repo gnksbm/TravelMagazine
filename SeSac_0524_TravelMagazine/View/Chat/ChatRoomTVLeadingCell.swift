@@ -141,7 +141,7 @@ final class ChatRoomTVLeadingCell: UITableViewCell, ChatRoomTableViewCell {
             
             messageLabel.topAnchor.constraint(
                 equalTo: messageBackgroundView.topAnchor,
-                constant: messagePadding
+                constant: messagePadding + 1
             ),
             messageLabel.leadingAnchor.constraint(
                 equalTo: messageBackgroundView.leadingAnchor,
@@ -153,7 +153,7 @@ final class ChatRoomTVLeadingCell: UITableViewCell, ChatRoomTableViewCell {
             ),
             messageLabel.bottomAnchor.constraint(
                 equalTo: messageBackgroundView.bottomAnchor,
-                constant: -messagePadding
+                constant: -messagePadding - 1
             ),
         ])
     }

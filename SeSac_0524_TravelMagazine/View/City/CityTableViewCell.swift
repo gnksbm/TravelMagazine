@@ -13,7 +13,7 @@ final class CityTableViewCell: UITableViewCell {
     private let nameLabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 24)
-        label.textColor = .white
+        label.textColor = .systemBackground
         return label
     }()
     
@@ -42,13 +42,13 @@ final class CityTableViewCell: UITableViewCell {
     private let explainLabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 15)
-        label.textColor = .white
+        label.textColor = .systemBackground
         return label
     }()
     
     private let explainLabelBackgroundView = {
         let view = UIView()
-        view.backgroundColor = .black.withAlphaComponent(0.6)
+        view.backgroundColor = .secondarySystemFill
         return view
     }()
     

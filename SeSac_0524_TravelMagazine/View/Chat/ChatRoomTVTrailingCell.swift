@@ -20,7 +20,7 @@ final class ChatRoomTVTrailingCell: UITableViewCell, ChatRoomTableViewCell {
         view.layer.borderWidth = 1
         view.layer.borderColor = UIColor.gray.cgColor
         view.layer.cornerRadius = 16
-        view.backgroundColor = .lightGray.withAlphaComponent(0.3)
+        view.backgroundColor = .secondarySystemFill
         return view
     }()
     
@@ -98,7 +98,7 @@ final class ChatRoomTVTrailingCell: UITableViewCell, ChatRoomTableViewCell {
             
             messageLabel.topAnchor.constraint(
                 equalTo: messageBackgroundView.topAnchor,
-                constant: messagePadding
+                constant: messagePadding + 1
             ),
             messageLabel.leadingAnchor.constraint(
                 equalTo: messageBackgroundView.leadingAnchor,
@@ -110,7 +110,7 @@ final class ChatRoomTVTrailingCell: UITableViewCell, ChatRoomTableViewCell {
             ),
             messageLabel.bottomAnchor.constraint(
                 equalTo: messageBackgroundView.bottomAnchor,
-                constant: -messagePadding
+                constant: -messagePadding - 1
             ),
         ])
     }
