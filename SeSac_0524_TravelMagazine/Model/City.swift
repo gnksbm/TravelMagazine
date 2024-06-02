@@ -12,7 +12,9 @@ struct City {
     let city_explain: String
     let city_image: String
     let domestic_travel: Bool
-    
+}
+
+extension City {
     var name: String {
         "\(city_name) | \(city_english_name)"
     }

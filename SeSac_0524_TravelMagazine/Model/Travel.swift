@@ -14,7 +14,9 @@ struct Travel {
     let save: Int?
     let like: Bool?
     let ad: Bool
-    
+}
+
+extension Travel {
     var subDescription: String? {
         guard let saveString = save?.formatted() else { return nil }
         return "(\(saveString)) · 저장 \(saveString)"

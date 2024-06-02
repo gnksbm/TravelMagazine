@@ -38,4 +38,19 @@ extension UIViewController {
         alertController.addAction(cancelAction)
         present(alertController, animated: true)
     }
+    
+    func setPlaceHolderView(message: String) {
+        let label = UILabel()
+        label.text = message
+        label.font = .boldSystemFont(ofSize: 30)
+        view.addSubview(label)
+        label.translatesAutoresizingMaskIntoConstraints = false
+    
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+        ])
+        
+        view.backgroundColor = .white
+    }
 }
