@@ -12,3 +12,10 @@ struct Chat {
     let date: String
     let message: String
 }
+
+extension Chat {
+    var visibleDate: String? {
+        let date = date.formatted(dateFormat: .chatInput)
+        return date?.formatted(dateFormat: .cellOutput)
+    }
+}

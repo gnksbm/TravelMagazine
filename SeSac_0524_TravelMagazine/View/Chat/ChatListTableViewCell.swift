@@ -55,6 +55,14 @@ final class ChatListTableViewCell: UITableViewCell {
         mainImageView.layer.cornerRadius = mainImageView.bounds.height / 2
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        mainImageView.image = nil
+        [roomNameLabel, lastestMessageLabel, lastestDateLabel].forEach {
+            $0.text = nil
+        }
+    }
+    
     func configureCell(data: ChatRoom) {
         mainImageView.image = data.mainImage
         roomNameLabel.text = data.chatroomName
@@ -63,6 +71,8 @@ final class ChatListTableViewCell: UITableViewCell {
     }
     
     private func configureLayout() {
+        selectionStyle = .none
+        
         [
             mainImageView,
             roomNameLabel,

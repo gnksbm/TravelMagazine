@@ -14,12 +14,6 @@ final class ChatListViewController: UIViewController {
         }
     }
     
-    private lazy var searchBar = {
-        let searchBar = UISearchBar()
-        searchBar.delegate = self
-        return searchBar
-    }()
-    
     private lazy var tableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
@@ -54,7 +48,7 @@ final class ChatListViewController: UIViewController {
     }
     
     private func configureLayout() {
-        [searchBar, tableView].forEach {
+        [tableView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0)
         }
@@ -112,5 +106,17 @@ extension ChatListViewController: UITableViewDataSource {
 }
 
 extension ChatListViewController: UITableViewDelegate { 
-    
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
+        let data = filteredList[indexPath.row]
+        let chatRoomVC = ChatRoomViewController()
+        chatRoomVC.title = data.chatroomName
+        chatRoomVC.configureChatList(dataList: data.chatList)
+        navigationController?.pushViewController(
+            chatRoomVC,
+            animated: true
+        )
+    }
 }

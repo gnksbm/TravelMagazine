@@ -53,4 +53,14 @@ extension UIViewController {
         
         view.backgroundColor = .white
     }
+    
+    func hideKeyboardOnTap() {
+        let tapGesture = UITapGestureRecognizer()
+        tapGesture.addTarget(self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func hideKeyboard() {
+        view.endEditing(true)
+    }
 }

@@ -89,7 +89,6 @@ extension TravelViewController: UITableViewDataSource, UITableViewDelegate {
             let vc = TravelDetailViewController()
             vc.title = "관광지 화면"
             navigationController?.pushViewController(vc, animated: true)
-            navigationController?.navigationBar.tintColor = .black
             vc.navigationItem.backButtonTitle = nil
         }
     }

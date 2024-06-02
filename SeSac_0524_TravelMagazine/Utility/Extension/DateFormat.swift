@@ -14,6 +14,7 @@ enum DateFormat: String {
     case magazineOutput = "yy년 MM월 dd일"
     case chatInput = "yyyy-MM-dd HH:mm"
     case chatOutput = "yy.MM.dd"
+    case cellOutput = "HH:mm a"
     
     var formatter: DateFormatter {
         if let formatter = Self.cachedStorage[self] {
@@ -21,6 +22,7 @@ enum DateFormat: String {
         } else {
             let newFormatter = DateFormatter()
             newFormatter.dateFormat = self.rawValue
+            newFormatter.locale = Locale(identifier: "ko_KR")
             Self.cachedStorage[self] = newFormatter
             return newFormatter
         }

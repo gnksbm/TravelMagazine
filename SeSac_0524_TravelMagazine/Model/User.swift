@@ -5,7 +5,7 @@
 //  Created by gnksbm on 6/2/24.
 //
 
-import Foundation
+import UIKit
 
 enum User: String {
     case hue = "Hue"
@@ -20,5 +20,11 @@ enum User: String {
         switch self {
         default: return rawValue
         }
+    }
+}
+
+extension User {
+    var visibleImage: UIImage? {
+        UIImage(named: rawValue)
     }
 }
