@@ -26,6 +26,7 @@
 		BE8B34C92C04A040002F7020 /* TravelTableViewADCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE8B34C72C04A040002F7020 /* TravelTableViewADCell.xib */; };
 		BEA3B55C2C0C06A4004383BB /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3B55B2C0C06A4004383BB /* ChatListViewController.swift */; };
 		BEA3B55E2C0C06F0004383BB /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3B55D2C0C06F0004383BB /* ChatRoomViewController.swift */; };
+		BEA3B5602C0C07A0004383BB /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3B55F2C0C07A0004383BB /* Chat.swift */; };
 		BEC30A232C086FE400501151 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC30A222C086FE300501151 /* MapViewController.swift */; };
 		BEC30A252C087F9600501151 /* CLLocationCoordinate2D+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC30A242C087F9600501151 /* CLLocationCoordinate2D+.swift */; };
 		BEC30A282C08D39100501151 /* Categorizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC30A272C08D39100501151 /* Categorizable.swift */; };
@@ -63,6 +64,7 @@
 		BE8B34C72C04A040002F7020 /* TravelTableViewADCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelTableViewADCell.xib; sourceTree = "<group>"; };
 		BEA3B55B2C0C06A4004383BB /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		BEA3B55D2C0C06F0004383BB /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
+		BEA3B55F2C0C07A0004383BB /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		BEC30A222C086FE300501151 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BEC30A242C087F9600501151 /* CLLocationCoordinate2D+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+.swift"; sourceTree = "<group>"; };
 		BEC30A272C08D39100501151 /* Categorizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categorizable.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				BE2849172C00C26400D5E817 /* Restaurant.swift */,
 				BE8B34BE2C049E9D002F7020 /* Travel.swift */,
 				BED704512C07609E00159680 /* City.swift */,
+				BEA3B55F2C0C07A0004383BB /* Chat.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				BEA3B55C2C0C06A4004383BB /* ChatListViewController.swift in Sources */,
 				BEC30A232C086FE400501151 /* MapViewController.swift in Sources */,
 				BE28491C2C00C4E300D5E817 /* RestaurantTableViewCell.swift in Sources */,
+				BEA3B5602C0C07A0004383BB /* Chat.swift in Sources */,
 				BEC30A282C08D39100501151 /* Categorizable.swift in Sources */,
 				BE8B34BF2C049E9D002F7020 /* Travel.swift in Sources */,
 				BECE59952C0600D200CFC442 /* TravelTableViewCell.swift in Sources */,
