@@ -73,6 +73,7 @@
                         <segue destination="dCe-dP-qCd" kind="relationship" relationship="viewControllers" id="SxE-26-0be"/>
                         <segue destination="WnD-A6-GUS" kind="relationship" relationship="viewControllers" id="gG9-dx-DUA"/>
                         <segue destination="ROY-Wd-r5D" kind="relationship" relationship="viewControllers" id="TP1-6V-SSf"/>
+                        <segue destination="34b-tO-DKr" kind="relationship" relationship="viewControllers" id="sAk-d8-EbO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bS-BI-moo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -233,6 +234,22 @@
             </objects>
             <point key="canvasLocation" x="2911" y="2185"/>
         </scene>
+        <!--Chat List View Controller-->
+        <scene sceneID="grC-aR-qqU">
+            <objects>
+                <viewController id="aSY-he-VHO" customClass="ChatListViewController" customModule="SeSac_0524_TravelMagazine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SgD-m4-YIa">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="vEI-ht-05u"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ibj-Vb-0Cy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ax-Sh-GeI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2912" y="2930"/>
+        </scene>
         <!--인기 도시-->
         <scene sceneID="Idj-78-Xit">
             <objects>
@@ -252,8 +269,28 @@
             </objects>
             <point key="canvasLocation" x="1984" y="2185"/>
         </scene>
+        <!--채팅-->
+        <scene sceneID="wcJ-gg-de2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="34b-tO-DKr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="채팅" image="bubble.right" catalog="system" id="4Y6-j1-Xws"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="anq-ba-dHd">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aSY-he-VHO" kind="relationship" relationship="rootViewController" id="Umc-4N-q8q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xy1-o0-B1Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1985" y="2930"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="bubble.right" catalog="system" width="128" height="110"/>
         <image name="building" catalog="system" width="110" height="128"/>
         <image name="flame" catalog="system" width="106" height="128"/>
         <image name="fork.knife" catalog="system" width="94" height="128"/>
