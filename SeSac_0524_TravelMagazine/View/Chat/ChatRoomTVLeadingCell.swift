@@ -41,6 +41,10 @@ final class ChatRoomTVLeadingCell: UITableViewCell, ChatRoomTableViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 13)
         label.textColor = .gray
+        label.setContentCompressionResistancePriority(
+            UILayoutPriority(999),
+            for: .horizontal
+        )
         return label
     }()
     
