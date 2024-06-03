@@ -32,8 +32,8 @@ extension ChatRoom {
 }
 
 extension ChatRoom: Searchable {
-    var searchKeyPath: KeyPath<ChatRoom, String> {
-        \.chatroomName
+    var searchKey: String {
+        chatroomName
     }
 }
 

@@ -8,15 +8,18 @@
 import Foundation
 
 protocol Searchable {
-    var searchKeyPath: KeyPath<Self, String> { get }
+    associatedtype SearchKey: Hashable
+    var searchKey: SearchKey { get }
 }
 
 extension Array where Element: Searchable {
-    func search(contain query: String) -> Self {
-        filter { $0[keyPath: $0.searchKeyPath].contains(query) }
+    func search(
+        contain query: String
+    ) -> Self where Element.SearchKey == String {
+        filter { $0.searchKey.contains(query) }
     }
     
-    func search(equal query: String) -> Self {
-        filter { $0[keyPath: $0.searchKeyPath] == query }
+    func search(equal query: Element.SearchKey) -> Self {
+        filter { $0.searchKey == query }
     }
 }
