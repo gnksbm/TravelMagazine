@@ -56,10 +56,10 @@ final class MagazineTableViewCell: UITableViewCell {
     }
     
     func configureCell(magazine: Magazine) {
-        largeImageView.kf.setImage(with: URL(string: magazine.photo_image))
+        largeImageView.kf.setImage(with: magazine.imageURL)
         titleLabel.text = magazine.title
         subtitleLabel.text = magazine.subtitle
-        dateLabel.text = magazine.formattedDate
+        dateLabel.text = magazine.visibleDate
     }
     
     private func configureUI() {

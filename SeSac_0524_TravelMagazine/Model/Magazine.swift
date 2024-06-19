@@ -13,8 +13,14 @@ struct Magazine {
     let photo_image: String
     let date: String
     let link: String
+}
+
+extension Magazine {
+    var imageURL: URL? {
+        URL(string: photo_image)
+    }
     
-    var formattedDate: String? {
+    var visibleDate: String? {
         guard let formattedString = date.formatted(dateFormat: .magazineInput)
         else { return nil }
         return formattedString.formatted(dateFormat: .magazineOutput)

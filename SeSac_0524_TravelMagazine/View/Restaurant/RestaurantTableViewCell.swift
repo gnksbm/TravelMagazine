@@ -94,7 +94,7 @@ final class RestaurantTableViewCell: UITableViewCell {
     }
     
     func configureCell(restaurant: Restaurant) {
-        largeImageView.kf.setImage(with: URL(string: restaurant.image))
+        largeImageView.kf.setImage(with: restaurant.imageURL)
         nameLabel.text = restaurant.name
         categoryLabel.text = restaurant.category
         addressLabel.text = restaurant.address

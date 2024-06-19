@@ -21,6 +21,9 @@ struct Restaurant {
 }
 
 extension Restaurant {
+    var imageURL: URL? {
+        URL(string: image)
+    }
     var location: CLLocationCoordinate2D {
         CLLocationCoordinate2D(
             latitude: latitude,

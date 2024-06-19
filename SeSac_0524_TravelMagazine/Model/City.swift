@@ -22,6 +22,25 @@ extension City {
     var imageURL: URL? {
         URL(string: city_image)
     }
+    
+    var areaType: AreaType {
+        domestic_travel ? .domestic : .international
+    }
+    
+    enum AreaType: Int, CaseIterable {
+        case all, domestic, international
+        
+        var title: String {
+            switch self {
+            case .all:
+                return "모두"
+            case .domestic:
+                return "국내"
+            case .international:
+                return "해외"
+            }
+        }
+    }
 }
 
 struct CityInfo {
