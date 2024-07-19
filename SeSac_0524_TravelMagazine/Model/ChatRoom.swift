@@ -15,6 +15,16 @@ struct ChatRoom {
     var chatList: [Chat] = [] //채팅 화면에서 사용할 데이터
 }
 
+extension ChatRoom: Hashable {
+    static func == (lhs: ChatRoom, rhs: ChatRoom) -> Bool {
+        lhs.hashValue == rhs.hashValue
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(chatroomId)
+    }
+}
+
 extension ChatRoom {
     var mainImage: UIImage? {
         guard let imageName = chatroomImage.first else { return nil }

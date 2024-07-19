@@ -8,25 +8,17 @@
 import UIKit
 
 final class ChatListViewController: UIViewController {
-    private lazy var filteredList = mockChatList {
-        didSet {
-            tableView.reloadData()
-        }
-    }
-    
-    private lazy var tableView = {
-        let tableView = UITableView()
-        tableView.separatorStyle = .none
-        tableView.register(ChatListTableViewCell.self)
-        tableView.delegate = self
-        tableView.dataSource = self
-        return tableView
+    private lazy var chatListCV = {
+        let collectionView = ChatListCollectionView()
+        collectionView.delegate = self
+        return collectionView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLayout()
         configureNavigation()
+        chatListCV.updateSnapshot()
     }
     
     private func configureNavigation() {
@@ -48,7 +40,7 @@ final class ChatListViewController: UIViewController {
     }
     
     private func configureLayout() {
-        [tableView].forEach {
+        [chatListCV].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0)
         }
@@ -56,16 +48,16 @@ final class ChatListViewController: UIViewController {
         let safeArea = view.safeAreaLayoutGuide
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(
+            chatListCV.topAnchor.constraint(
                 equalTo: safeArea.topAnchor
             ),
-            tableView.leadingAnchor.constraint(
+            chatListCV.leadingAnchor.constraint(
                 equalTo: safeArea.leadingAnchor
             ),
-            tableView.trailingAnchor.constraint(
+            chatListCV.trailingAnchor.constraint(
                 equalTo: safeArea.trailingAnchor
             ),
-            tableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+            chatListCV.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
         ])
     }
 }
@@ -76,41 +68,20 @@ extension ChatListViewController: UISearchBarDelegate {
         textDidChange searchText: String
     ) {
         guard !searchText.isEmpty else {
-            filteredList = mockChatList
+            chatListCV.updateSnapshot()
             return
         }
-        filteredList = mockChatList.search(contain: searchText)
+        chatListCV.updateSnapshot(with: searchText)
     }
 }
 
-extension ChatListViewController: UITableViewDataSource {
-    func tableView(
-        _ tableView: UITableView,
-        numberOfRowsInSection section: Int
-    ) -> Int {
-        filteredList.count
-    }
-    
-    func tableView(
-        _ tableView: UITableView,
-        cellForRowAt indexPath: IndexPath
-    ) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(
-            cellType: ChatListTableViewCell.self,
-            for: indexPath
-        )
-        let data = filteredList[indexPath.row]
-        cell.configureCell(data: data)
-        return cell
-    }
-}
-
-extension ChatListViewController: UITableViewDelegate { 
-    func tableView(
-        _ tableView: UITableView,
-        didSelectRowAt indexPath: IndexPath
+extension ChatListViewController: UICollectionViewDelegate {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
     ) {
-        let data = filteredList[indexPath.row]
+        let data = chatListCV.diffableDataSource
+            .snapshot(for: .main).items[indexPath.row]
         let chatRoomVC = ChatRoomViewController()
         chatRoomVC.title = data.chatroomName
         chatRoomVC.configureChatList(dataList: data.chatList)

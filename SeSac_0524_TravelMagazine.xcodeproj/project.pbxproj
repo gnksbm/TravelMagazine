@@ -18,6 +18,7 @@
 		BE2849182C00C26400D5E817 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2849172C00C26400D5E817 /* Restaurant.swift */; };
 		BE28491A2C00C48800D5E817 /* RestaurantListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2849192C00C48800D5E817 /* RestaurantListViewController.swift */; };
 		BE28491C2C00C4E300D5E817 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28491B2C00C4E300D5E817 /* RestaurantTableViewCell.swift */; };
+		BE2AFB1A2C4A680600C6718C /* ChatListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2AFB192C4A680600C6718C /* ChatListCollectionView.swift */; };
 		BE8B34BD2C0465B9002F7020 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8B34BC2C0465B9002F7020 /* UIViewController+.swift */; };
 		BE8B34BF2C049E9D002F7020 /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8B34BE2C049E9D002F7020 /* Travel.swift */; };
 		BE8B34C12C049F50002F7020 /* TravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8B34C02C049F50002F7020 /* TravelViewController.swift */; };
@@ -27,7 +28,6 @@
 		BEA3B55C2C0C06A4004383BB /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3B55B2C0C06A4004383BB /* ChatListViewController.swift */; };
 		BEA3B55E2C0C06F0004383BB /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3B55D2C0C06F0004383BB /* ChatRoomViewController.swift */; };
 		BEA3B5602C0C07A0004383BB /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3B55F2C0C07A0004383BB /* Chat.swift */; };
-		BEA3B5622C0C0A64004383BB /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3B5612C0C0A64004383BB /* ChatListTableViewCell.swift */; };
 		BEA3B5642C0C90BB004383BB /* Searchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3B5632C0C90BB004383BB /* Searchable.swift */; };
 		BEA3B5662C0C95A6004383BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3B5652C0C95A6004383BB /* User.swift */; };
 		BEA3B5682C0C95CB004383BB /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3B5672C0C95CB004383BB /* ChatRoom.swift */; };
@@ -63,6 +63,7 @@
 		BE2849172C00C26400D5E817 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		BE2849192C00C48800D5E817 /* RestaurantListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListViewController.swift; sourceTree = "<group>"; };
 		BE28491B2C00C4E300D5E817 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		BE2AFB192C4A680600C6718C /* ChatListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListCollectionView.swift; sourceTree = "<group>"; };
 		BE8B34BC2C0465B9002F7020 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		BE8B34BE2C049E9D002F7020 /* Travel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
 		BE8B34C02C049F50002F7020 /* TravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +73,6 @@
 		BEA3B55B2C0C06A4004383BB /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		BEA3B55D2C0C06F0004383BB /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
 		BEA3B55F2C0C07A0004383BB /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
-		BEA3B5612C0C0A64004383BB /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListTableViewCell.swift; sourceTree = "<group>"; };
 		BEA3B5632C0C90BB004383BB /* Searchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchable.swift; sourceTree = "<group>"; };
 		BEA3B5652C0C95A6004383BB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BEA3B5672C0C95CB004383BB /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
@@ -191,7 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				BEA3B55B2C0C06A4004383BB /* ChatListViewController.swift */,
-				BEA3B5612C0C0A64004383BB /* ChatListTableViewCell.swift */,
+				BE2AFB192C4A680600C6718C /* ChatListCollectionView.swift */,
 				BEA3B55D2C0C06F0004383BB /* ChatRoomViewController.swift */,
 				BEA3B56D2C0C98F3004383BB /* ChatRoomTableViewCell.swift */,
 				BEA3B5692C0C9657004383BB /* ChatRoomTVLeadingCell.swift */,
@@ -354,7 +354,6 @@
 				BEA3B56E2C0C98F3004383BB /* ChatRoomTableViewCell.swift in Sources */,
 				BEA3B5662C0C95A6004383BB /* User.swift in Sources */,
 				BE8B34C82C04A040002F7020 /* TravelTableViewADCell.swift in Sources */,
-				BEA3B5622C0C0A64004383BB /* ChatListTableViewCell.swift in Sources */,
 				BE8B34BD2C0465B9002F7020 /* UIViewController+.swift in Sources */,
 				BE2848F22C00C08400D5E817 /* MagazineTableViewCell.swift in Sources */,
 				BED704552C07627F00159680 /* CityViewController.swift in Sources */,
@@ -367,6 +366,7 @@
 				BE28491A2C00C48800D5E817 /* RestaurantListViewController.swift in Sources */,
 				BE2848D72C00B7D800D5E817 /* AppDelegate.swift in Sources */,
 				BE8B34C42C04A020002F7020 /* TravelTableViewItemCell.swift in Sources */,
+				BE2AFB1A2C4A680600C6718C /* ChatListCollectionView.swift in Sources */,
 				BEA3B55C2C0C06A4004383BB /* ChatListViewController.swift in Sources */,
 				BEC30A232C086FE400501151 /* MapViewController.swift in Sources */,
 				BE28491C2C00C4E300D5E817 /* RestaurantTableViewCell.swift in Sources */,
